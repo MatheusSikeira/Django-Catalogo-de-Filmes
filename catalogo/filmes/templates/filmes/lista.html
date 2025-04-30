@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dracula Movies</title>
+    <link rel="stylesheet" href="{% static 'filmes/style.css' %}">
+</head>
+<body>
+    <div class="homebar">
+    <h1>Dracula Movies</h1>
+    </div>
+    <div class="filmlist">
+    <h1>Lista de filmes</h1>
+    </div>
+    <div class="lista-filmes">
+        {% for filme in filmes%}
+            <div class="filme">
+                <img src="{{filme.capa}}">
+                <p>{{ filme.titulo }} ({{ filme.ano }})</p>
+            </div>
+            {% endfor %}
+    </div>
+</body>
+</html>
